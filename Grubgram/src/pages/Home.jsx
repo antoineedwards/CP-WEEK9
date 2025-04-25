@@ -30,6 +30,9 @@ export default function Home() {
 
   return (
     <div>
+      <img src='/src/assets/table.jpg' alt='Table with food'
+      style={{width:'100%', margin:'0'}}/>
+      <h1 style={{margin:'0 0 4rem 0'}}>Share Your Ideas With The World!</h1>
       <SortFilterBar sort={sort} setSort={setSort} search={search} setSearch={setSearch} />
       {loading ? <LoadingSpinner /> : filteredPosts.map(post => <PostCard key={post.id} post={post} />)}
     </div>

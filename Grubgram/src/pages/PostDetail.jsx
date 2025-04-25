@@ -53,10 +53,12 @@ export default function PostDetail() {
       <p>{formatDate(post.created_at)}</p>
       {post.image_url && <img src={post.image_url} alt="Post image" />}
       <p>{post.content}</p>
+      <div>
+      <div className="post-actions" style={{display:'flex'}}>
       <UpvoteButton count={post.upvotes} onUpvote={handleUpvote} />
-      <div className="post-actions">
-        <Link to={`/edit/${post.id}`}>Edit</Link>
+        <Link to={`/edit/${post.id}`}><button>Edit</button></Link>
         <button onClick={handleDelete}>Delete</button>
+      </div>
       </div>
 
       <hr />
