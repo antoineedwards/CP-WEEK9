@@ -11,26 +11,33 @@ export default function PostForm({ initialData = {}, onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="post-form">
-      <input
+    <div>
+    <form onSubmit={handleSubmit} className="post-form"
+    style={{display:'flex', flexDirection:'column', alignItems:'center'}}
+    >
+      <input 
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Title"
         required
+        style={{margin:'10px'}}
       />
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
         placeholder="What's the recipe?"
+        style={{margin:'10px'}}
       />
       <input
         type="text"
         value={imageUrl}
         onChange={(e) => setImageUrl(e.target.value)}
         placeholder="Image URL"
+        style={{margin:'10px'}}
       />
       <button type="submit">Submit</button>
     </form>
+    </div>
   );
 }
