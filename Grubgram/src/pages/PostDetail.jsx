@@ -48,10 +48,10 @@ export default function PostDetail() {
   if (!post) return <p>Post not found</p>;
 
   return (
-    <div className="post-detail">
+    <div className="post-detail" style={{justifyContent:'center', alignItems:'center', display:'flex', flexDirection:'column'}}>
       <h2>{post.title}</h2>
       <p>{formatDate(post.created_at)}</p>
-      {post.image_url && <img src={post.image_url} alt="Post image" />}
+      {post.image_url && <img src={post.image_url} alt="Post image" style={{maxHeight:'200px'}} />}
       <p>{post.content}</p>
       <div>
       <div className="post-actions" style={{display:'flex'}}>
